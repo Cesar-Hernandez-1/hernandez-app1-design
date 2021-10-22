@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.5" orientation="VERTICAL" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <items>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="New">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="To-Do List" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Remove">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete Item From List" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Edit List Title" />
+                        <MenuItem mnemonicParsing="false" text="Add/Edit Item Description" />
+                        <MenuItem mnemonicParsing="false" text="Item Due Date" />
+                  <MenuItem mnemonicParsing="false" text="Mark Item Complete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Save List" />
+                        <MenuItem mnemonicParsing="false" text="Load List" />
+                        <MenuItem mnemonicParsing="false" text="Delete List" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <TabPane prefHeight="339.0" prefWidth="705.0">
+            <tabs>
+                <Tab closable="false" text="List 1">
+                    <content>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL">
+                            <items>
+                                <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="297.0" prefWidth="702.0">
+                                    <items>
+                                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="690.0">
+                                            <children>
+                                                <Button layoutX="14.0" layoutY="4.0" mnemonicParsing="false" text="Add Event" />
+                                                <DatePicker layoutX="112.0" layoutY="7.0" />
+                                                <TextField layoutX="318.0" layoutY="7.0" prefHeight="26.0" prefWidth="361.0" />
+                                                <Separator layoutX="98.0" orientation="VERTICAL" prefHeight="38.0" prefWidth="6.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="98.0" AnchorPane.topAnchor="0.0" />
+                                                <Separator layoutX="303.0" orientation="VERTICAL" prefHeight="38.0" prefWidth="6.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="303.0" AnchorPane.topAnchor="0.0" />
+                                            </children>
+                                        </AnchorPane>
+                                        <ListView prefHeight="237.0" prefWidth="686.0" />
+                                    </items>
+                                </SplitPane>
+                                <MenuButton mnemonicParsing="false" text="Display Options" textAlignment="CENTER">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="All Items" />
+                                        <MenuItem mnemonicParsing="false" text="All Completed Items" />
+                                        <MenuItem mnemonicParsing="false" text="All Incompleted Items" />
+                                    </items>
+                                    <font>
+                                        <Font name="Roboto" size="12.0" />
+                                    </font>
+                                </MenuButton>
+                            </items>
+                        </SplitPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </items>
+</SplitPane>
