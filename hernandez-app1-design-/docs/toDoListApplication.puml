@@ -1,0 +1,94 @@
+@startuml
+class Application{
+
+    'methods
+    + main(String [] args)
+    + start(Stage stage)
+}
+
+class toDoListController{
+    'attributes
+    - MenuItem AddNewToDoListButton
+    - MenuItem DeleteListButton
+    - Button addEventButton
+    - MenuItem allCompletedEventsButton
+    - MenuItem allIncompleteEventsButton
+    - DatePicker dateButton
+    - MenuItem deleteListButton
+    - MenuItem editEventDescriptionButton
+    - MenuItem editEventDueDateButton
+    - MenuItem editToDoListTitleButton
+    - TextField eventTextButton
+    - MenuItem loadListButton
+    - MenuItem markEventCompleteButton
+    - MenuItem saveListButton
+    - MenuItem showAllEventsButton
+    - ListView<?> toDoEventList
+    - TabPane tabPlane
+
+    'methods
+    + toDoListController()
+
+    +addEvent(ActionEvent event) : void
+    +addToDoList(ActionEvent event):void
+    +deleteList(ActionEvent event):void
+    +deleteToDoList(ActionEvent event):void
+    +displayAllEvents(ActionEvent event):void
+    +displayCompletedEvents(ActionEvent event):void
+    +displayIncompletedEvents(ActionEvent event):void
+    +editEventDescription(ActionEvent event):void
+    +editEventDueDate(ActionEvent event):void
+    +editListTitle(ActionEvent event):void
+    +getDate(ActionEvent event):void
+    +getEvent(ActionEvent event):void
+    +loadList(ActionEvent event):void
+    +markEventComplete(ActionEvent event):void
+    +saveList(ActionEvent event):void
+    +setList(ActionEvent event):void
+}
+
+Application --o toDoListController
+
+class toDoList{
+    'attributes
+    -List<Events> events
+    -String title
+
+    'methods
+    +toDoList()
+
+    + setTitle(String) : void
+    + getTitle() : String
+    + editEventDescription(String) : void
+    + editEventDate: (String) : void
+    + setEventCompleted(String) : void
+    + setEventIncomplete(String) : void
+    + saveList() : void
+    + deleteList() : void
+    + addEvent(Event) : void
+}
+
+class Event{
+    'attributes
+    - String nameEvent
+    - String description
+    - String date
+    - Boolean completed
+
+    'methods
+    + Event()
+
+    +setCompleted(Boolean) : void
+    +setDate(String) : void
+    +setNameEvent(String): void
+    +setDescription : void
+    +getCompleted() : Boolean
+    +getNameEvent() : String
+    +getDescription() : String
+    +getDate(): String
+}
+
+toDoList --* Event
+
+toDoListController --o toDoList
+@enduml
